@@ -42,7 +42,7 @@ function setup(){
     rapunzel.addAnimation("collided", rapunzel_collided);
     rapunzel.scale = 0.5;
     rapunzel.setCollider("circle", 30, 0, 80);
-    rapunzel.debug = true;
+    //rapunzel.debug = true;
 
     //restart + gameover
     gameOver = createSprite(windowWidth/2,windowHeight/2);
@@ -113,7 +113,8 @@ function draw(){
     if (gameState === "end") {
 
         swal({
-            title: "Better Luck next time", 
+            title: "Better Luck Next Time!", 
+            text: `Final Score: ${score}`,
             imageUrl : "https://images.pond5.com/game-over-text-reveal-arcade-footage-073935596_iconl.jpeg",
             imageSize: "300x300",
             confirmButtonText: "Play Again"
@@ -141,7 +142,7 @@ function spawnObstacles(){
     if(frameCount % 90 === 0) {
         var obstacle = createSprite(windowWidth,windowHeight - 40,10,40);
         obstacle.setCollider("rectangle", 0, 0, 380, 100);
-        obstacle.debug = true;
+        //obstacle.debug = true;
         obstacle.velocityX = -(6 + 3*score/100);
         
         var rand = Math.round(random(1,4));
